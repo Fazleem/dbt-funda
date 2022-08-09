@@ -3,7 +3,7 @@ with orders as  (
 ),
 
 payments as (
-    select * from {{ ref('stg_dbt-tutorials__payments') }}
+    select * from {{ ref('stg_payments') }}
 ),
 
 order_payments as (
