@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        description: jaffle shop's customer ids
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+      - name: status
+        description: status of customers orders
+        tests:
+          - accepted_values:
+              values:
+                - placed
+                - shipped
+                - returned
+                - completed
+                - return_pending
